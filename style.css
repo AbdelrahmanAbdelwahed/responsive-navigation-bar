@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+body {
+  min-height: 100vh;
+  background-color: #0e1538;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  border-left: 5px solid #161616;
+  box-sizing: initial;
+  border-radius: 10px;
+  background-color: #161616;
+  transition: width 0.5s;
+  overflow: hidden;
+}
+.container.active {
+  width: 300px;
+  background-color: #161616;
+}
+.container.active ul .list a {
+  color: #fff;
+}
+.container.active ul .list.active a {
+  color: #fff;
+}
+.container ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 40px;
+}
+.list {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.list.active {
+  background-color: #0e1538;
+}
+.container ul li b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #0e1538;
+  display: none;
+}
+.container ul li b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  border-bottom-right-radius: 10px;
+}
+.container ul li b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #0e1538;
+  display: none;
+}
+.container ul li b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #161616;
+  border-top-right-radius: 10px;
+}
+.container ul li.active b:nth-child(1),
+.container ul li.active b:nth-child(2) {
+  display: block;
+}
+.list a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  color: #fff;
+}
+.list.active a {
+  color: #fff;
+}
+.icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.icon ion-icon {
+  font-size: 1.5em;
+}
+.title {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  white-space: normal;
+}
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #161616;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle.active {
+  background-color: #ff4d89;
+}
+.toggle ion-icon {
+  position: absolute;
+  color: #fff;
+  font-size: 34px;
+  display: none;
+}
+.toggle ion-icon.open {
+  display: block;
+}
+.toggle.active ion-icon.open {
+  display: none;
+}
+.toggle ion-icon.close {
+  display: none;
+}
+.toggle.active ion-icon.close {
+  display: block;
+}
+.box {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  bottom: -4px;
+  right: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  background: linear-gradient(315deg, #00ccff, #0e1538, #d400d4);
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  bottom: -4px;
+  right: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  filter: blur(50px);
+  background: linear-gradient(315deg, #00ccff, #0e1538, #d400d4);
+}
+.box span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e1538;
+  z-index: 10;
+}
+.box h2 {
+  position: relative;
+  z-index: 11;
+  color: #fff;
+  font-size: 9em;
+}
